@@ -1,0 +1,34 @@
+.notes__header {
+  border: 1px solid #ecedee;
+  color: #53afed;
+  background: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 $s-size;
+}
+
+.notes__item {
+  border: 1px solid #ecedee;
+  border-top: none;
+  color: #131415;
+  display: flex;
+  justify-content: space-between;
+  padding: $s-size;
+  transition: background 0.5s ease;
+  &:hover {
+    background: #fafafa;
+  } 
+}
+
+.notes__button {
+  background: #c41b1b;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  height: 50px;
+  margin-left: $s-size;
+}
+
+.notes__body {
+  word-break: break-all;
+}

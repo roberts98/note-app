@@ -1,0 +1,20 @@
+.new-note {
+  margin-bottom: $xl-size;
+}
+
+.new-note__input {
+  box-sizing: border-box;
+  border: 3px solid #53afed;
+  padding: $m-size;
+  width: 100%;
+}
+
+.new-note__button {
+  border: none;
+  border-radius: 1rem;
+  background: #53afed;
+  color: #fff;
+  float: right;
+  padding: $m-size;
+  width: 100%;
+}

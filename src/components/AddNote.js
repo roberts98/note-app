@@ -22,11 +22,11 @@ class AddNote extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div className="container">
         {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.addNote} >
-          <input type="text" name="note" placeholder="note..." />
-          <button>Add note!</button>
+        <form className="new-note" onSubmit={this.addNote} >
+          <textarea className="new-note__input" name="note" placeholder="note..." rows="15"></textarea>
+          <button className="new-note__button">Add note!</button>
         </form>
       </div>
     );

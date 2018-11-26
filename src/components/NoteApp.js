@@ -1,6 +1,7 @@
 import React from 'react';
 import AddNote from './AddNote';
-import Options from './Notes';
+import Header from './Header';
+import Notes from './Notes';
 
 class NoteApp extends React.Component {
   state = {
@@ -25,13 +26,30 @@ class NoteApp extends React.Component {
       };
     });
   };
+
+  componentDidMount() {
+    const json = localStorage.getItem('notes');
+    const notes = JSON.parse(json);
+
+    if (notes) {
+      this.setState(() => ({ notes }));
+    }
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.notes.length !== this.state.notes.length) {
+      const json = JSON.stringify(this.state.notes);
+
+      localStorage.setItem('notes', json);
+    }
+  }
   render() {
     return (
       <div>
+        <Header />
         <AddNote
           addNote={this.addNote}
         />
-        <Options
+        <Notes
           notes={this.state.notes}
           removeNote={this.removeNote}
         />
