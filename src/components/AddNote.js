@@ -1,6 +1,9 @@
 import React from 'react';
 
 class AddNote extends React.Component {
+  state = {
+    error: ''
+  }
   addNote = (e) => {
     e.preventDefault();
 
@@ -12,7 +15,7 @@ class AddNote extends React.Component {
         error
       };
     });
-    
+
     if (!error) {
       e.target.elements.note.value = '';
     }
@@ -20,6 +23,7 @@ class AddNote extends React.Component {
   render() {
     return (
       <div>
+        {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.addNote} >
           <input type="text" name="note" placeholder="note..." />
           <button>Add note!</button>

@@ -7,6 +7,7 @@ const Notes = (props) => (
       <Note
         note={note}
         key={note}
+        removeNote={props.removeNote}
       />
     ))}
   </div>

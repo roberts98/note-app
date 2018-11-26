@@ -7,8 +7,10 @@ class NoteApp extends React.Component {
     notes: []
   };
   addNote = (note) => {
-    if(!note) {
-      return 'Enter valid value to add note!'
+    if (!note) {
+      return 'Enter valid value to add note!';
+    } else if (this.state.notes.indexOf(note) > -1) {
+      return 'Note already exists';
     }
     this.setState((prevState) => {
       return {
@@ -23,11 +25,16 @@ class NoteApp extends React.Component {
       };
     });
   };
-  render () {
+  render() {
     return (
       <div>
-        <AddNote addNote={this.addNote} />
-        <Options notes={this.state.notes} />
+        <AddNote
+          addNote={this.addNote}
+        />
+        <Options
+          notes={this.state.notes}
+          removeNote={this.removeNote}
+        />
       </div>
     );
   };
